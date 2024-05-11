@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg,#f06291, #fffde7 );
+    font-family: sans-serif;
+}
+
+.container {
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+}
+.calculator {
+    position: relative;
+    height: auto;
+    max-width: 321px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 0 4px 1px rgba(0,0,0,0.3), 0 0 30px rgb(187, 130, 130);
+    background-color: #f4f2ec;
+    .display-screen {
+        max-height: 110px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        padding: 0 8px;
+        background-color: #b9e2d8;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 2px #0a1e23 inset;
+        overflow: hidden;   
+    }
+    #display{
+        color: #0a1e23;
+        height: 110px;
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+        overflow: hidden;
+    }
+    #equal {
+        height: 130px;
+    }
+    #clear {
+        background-color: #ffd5d8;
+        color: #fc4552;
+    }
+    .btn-number {
+        background-color: #c3eaff;
+        color: #000;
+    }
+    .btn-operator {
+        background-color: #ffd0fb;
+        color: #f967f3;
+    }
+    .btn-equal {
+        background-color: #adf9e7;
+        color: #000;
+    }
+
+    /* Dark Theme */
+
+    &.dark {
+        background-color: #1b1b1b;
+        .display-screen {
+           box-shadow: 0 0 5px 2px #1e4e5c inset;   
+        }
+        #clear {
+           background-color: #4c35aa;
+           color: #fff;
+           
+        }
+        .btn-number {
+            background-color: #8efda6;
+            color: #000;
+            font-weight: 600;
+        }
+        .btn-operator {
+            background-color: #f0db4f;
+            color: #aa00a4;
+        }
+        .btn-equal {
+            background-color: #f23b00;
+            color: #fff;
+        }
+        button {
+            box-shadow: 1px 0 1px 1px #585858;
+            transition: all 0.2s ease;
+        &#clear {
+            box-shadow: 1px 0 0px 1px #7162ab;
+            &:hover {
+                box-shadow: 1px 1px 2px 1px #332471 inset;
+            }
+        }
+        &.btn-number {
+            box-shadow: 1px 0 0px 1px #36b752;
+            &:hover {
+                box-shadow: 1px 1px 2px 1px #414141 inset;
+            }
+        }
+        &.btn-operator {
+            box-shadow: 1px 0 0px 1px #fff5b6;
+            &:hover {
+                box-shadow: 1px 1px 2px 1px #414141 inset;
+            }
+        }
+        &.btn-equal {
+            box-shadow: 1px 0 0px 1px #f16d42;
+            &:hover {
+                box-shadow: 1px 1px 2px 1px #8f2400 inset;
+            }
+        }
+        }
+    }
+
+}
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 32px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    &::before {
+        content: "";
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        top: 50%;
+        transform: translate(-50%, 50%);
+        border-radius: 50%;
+        background-color: #333;
+        z-index: -1;
+    }
+}
+.theme-toggle.active {
+    color: #333;
+    &::before {
+        background-color: #f4f2ec;
+    }
+}
+button {
+    height: 60px;
+    width: 60px;
+    border: none;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 1px 0 1px 1px #585858;
+    transition: all 0.2s ease;
+    &:hover {
+    box-shadow: 1px 0px 2px 1px #3f3f3f inset;
+    }
+
+}
+
