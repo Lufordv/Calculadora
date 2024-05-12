@@ -19,7 +19,7 @@ button.forEach((item) => {
             display.innerText = string.substr(0, string.length - 1)
             /* Si la pantalla no está vacía y presionamos = llamamos al método eval para que calcule la operación aritmética seleccionada */
         } else if (display.innerText != "" && item.id == "equal") {
-            display.innerText = eval(display.innerText);
+            display.innerText = parseFloat(eval(display.innerText)).toFixed(2)
             /* Si la pantalla está vacía y presionamos = muestra err" y después de dos segundos limpia la pantalla */
         } else if (display.innerText == "" && item.id == "equal") {
             display.innerText = "Err";
